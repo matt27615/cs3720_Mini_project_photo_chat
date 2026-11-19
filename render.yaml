@@ -1,0 +1,12 @@
+# Optional: Render Blueprint. You can also create the Web Service by hand in the Render dashboard:
+#   Root Directory: backend   Build: pip install -r requirements.txt
+#   Start Command: uvicorn main:app --host 0.0.0.0 --port $PORT
+services:
+  - type: web
+    name: cs3720-photo-chat
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
